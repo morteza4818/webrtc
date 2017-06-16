@@ -43,7 +43,9 @@
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
   
 navigator.mediaDevices.getUserMedia(constraints , function handleVideo(stream) {
-    video.src = window.URL.createObjectURL(stream);
+    alert('c');
+    video.src = URL.createObjectURL(stream);
+     video.play();
 }, function videoError(e) {
     // do something
 });
