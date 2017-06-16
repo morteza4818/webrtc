@@ -29,7 +29,7 @@
     </video>
 </div>
 <script>
- var video = document.querySelector("#videoElement");
+ var video = document.getElementById("#videoElement");
  var constraints ={
     video: {
         mediaSource: "screen", // whole screen sharing
@@ -42,17 +42,11 @@
     }
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
   
-navigator.mediaDevices.getUserMedia(constraints , handleVideo, videoError);
-
- 
-function handleVideo(stream) {
-alert("s")
+navigator.mediaDevices.getUserMedia(constraints , function handleVideo(stream) {
     video.src = window.URL.createObjectURL(stream);
-}
- 
-function videoError(e) {
+}, function videoError(e) {
     // do something
-}
+});
  
 
 </script>
