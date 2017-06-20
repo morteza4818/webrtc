@@ -31,7 +31,6 @@ screen.onaddstream = function(e) {
     document.body.appendChild(e.video);
 };
   screen.openSignalingChannel = function(callback) {
-    return io.connect().on('message', callback);
 };
 screen.check();
 
